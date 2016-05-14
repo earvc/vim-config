@@ -1,0 +1,11 @@
+# ignore vim network history logging
+vim/.netrwhist
+
+.DS_Store
+
+# ignore nerdtree repo 
+vim/bundle/*
+
+# don't ignore the vim bunde makefile for installing Vundle
+!vim/bundle/Makefile
+
