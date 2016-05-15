@@ -17,6 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Nerd tree install
 Plugin 'scrooloose/nerdTree'
 
+" You Complete Me install
+Plugin 'Valloric/YouCompleteMe'
+
 " All plugins must be added before this line
 call vundle#end()
 filetype plugin indent on
