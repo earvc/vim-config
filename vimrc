@@ -27,6 +27,9 @@ filetype plugin indent on
 " ycm compiler flags file
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
+" ycm autoclose preview window
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " change the mapleader from \ to ,
 let mapleader=","
 
