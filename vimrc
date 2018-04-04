@@ -17,9 +17,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Nerd tree install
 Plugin 'scrooloose/nerdTree'
 
-" You Complete Me install
-Plugin 'Valloric/YouCompleteMe'
-
 " All plugins must be added before this line
 call vundle#end()
 filetype plugin indent on
@@ -43,8 +40,7 @@ set copyindent       " copy the previous indent in autoindent
 set shiftwidth=4     " number of spaces to use for autoindent
 set shiftround       " use multiple of shiftwidth when indenting with '<' 
 set showmatch        " set show matching parenthesis
-set ignorecase       " ignore case when searching
-set smartcase        " ignore case if earch patter is all lowercase, case-sensitive otherwise
+set smartcase        " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smarttab         " insert tabs on the start of a line according to shiftwidth
 set expandtab        " use spaces instead of tabs"
 set hlsearch         " highlight search terms
@@ -54,12 +50,6 @@ set noswapfile       " don't create swap files
 set history=1000     " remember more history
 set undolevels=1000  " use many levels of undo
 set title            " show terminal title
-
-" Folding settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
 
 " NERDtree key mappings
 nmap <silent> <C-N> :NERDTreeToggle<CR>   
