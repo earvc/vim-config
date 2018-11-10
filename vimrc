@@ -1,36 +1,33 @@
 """""""""""""""""""""""""""""""""""""""""""""""
 " My .vimrc yo!
 "
-"""""""""""""""""""""""""""""""""""""""""""""""
-
-" Vundle
+""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Nerd tree install
-Plugin 'scrooloose/nerdTree'
-
-" All plugins must be added before this line
-call vundle#end()
-filetype plugin indent on
-
-" ycm compiler flags file
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-
-" ycm autoclose preview window
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" change the mapleader from \ to ,
 let mapleader=","
 
-" Basic vim settings
+"""""""""""""""""""""""
+" Plug
+"""""""""""""""""""""""
+
+" Install Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins to install
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+call plug#end()
+
+"""""""""""""""""""""""
+" VIM settings
+"""""""""""""""""""""""
 set hidden           " set hidden
 set nowrap           " no automatic word wrap
 set number           " show line numbers
@@ -51,8 +48,23 @@ set history=1000     " remember more history
 set undolevels=1000  " use many levels of undo
 set title            " show terminal title
 
-" NERDtree key mappings
+"""""""""""""""""""""""
+" Key Mappings
+"""""""""""""""""""""""
+" NerdTree
 nmap <silent> <C-N> :NERDTreeToggle<CR>   
+
+"fzf mappings
+nmap ; :Buffers<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>t :Tags<CR>
+nmap <Leader>c :Commit<CR>
+
+" Window split navigation
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " Load color scheme (now mustang. see .vim/colors)
 set t_Co=256
