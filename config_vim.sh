@@ -12,11 +12,11 @@ rm ~/.tmux.conf > /dev/null 2>&1
 echo "Installing dependencies"
 echo "======================="
 echo "--> Curl"
-apt-get install curl
+brew install curl
 echo ""
 
-echo "--> Ack"
-apt-get install ack
+echo "--> Ag"
+brew install the_silver_searcher
 echo ""
 
 echo "Setting up symlinks to dot files"

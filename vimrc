@@ -26,7 +26,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mileszs/ack.vim'
 call plug#end()
 
 """""""""""""""""""""""
@@ -74,10 +73,6 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-" Ack vim
-let g:ack_autoclose = 1   " autoclose ack search pane
-set shellpipe=>           " hides Ack search from terminal
-
 """""""""""""""""""""""
 " Key Mappings
 """""""""""""""""""""""
@@ -99,4 +94,4 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gd :Gdiff<CR>
 
 "Ack mappings
-nmap <leader>d :Ack!<space>
+nmap <leader>d :Ag<space>
