@@ -19,7 +19,6 @@ endif
 
 " Plugins to install
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
@@ -58,7 +57,6 @@ set term=xterm-256color " fixes terminal colors in tmux
 " Palenight color theme
 set background=dark
 colorscheme palenight
-let g:lightline = { 'colorscheme' : 'palenight' }
 let g:airline_theme = "palenight"
 
 if (has("nvim"))
@@ -80,7 +78,7 @@ endif
 nmap <leader>x :q<CR>
 
 " NerdTree
-nmap <silent> <C-N> :NERDTreeToggle<CR>   
+nmap <silent> <C-N> :set invnumber<CR>
 
 "fzf mappings
 nmap ; :Buffers<CR>
